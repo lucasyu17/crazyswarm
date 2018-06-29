@@ -1,0 +1,752 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true" buildAllGenerated="false">
+    <generated />
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="38fddb8a-e1b6-4957-823f-53442ab8db75" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ros_ws/src/crazyswarm/include/commander.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ros_ws/src/crazyswarm/include/commander.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crazyflie-firmware" beforeDir="false" afterPath="$PROJECT_DIR$/crazyflie-firmware" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ros_ws/src/crazyflie_ros" beforeDir="false" afterPath="$PROJECT_DIR$/ros_ws/src/crazyflie_ros" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ros_ws/src/crazyswarm/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ros_ws/src/crazyswarm/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ros_ws/src/crazyswarm/launch/allCrazyflies.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/ros_ws/src/crazyswarm/launch/allCrazyflies.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ros_ws/src/crazyswarm/launch/crazyflieTypes.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/ros_ws/src/crazyswarm/launch/crazyflieTypes.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ros_ws/src/crazyswarm/launch/crazyflies.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/ros_ws/src/crazyswarm/launch/crazyflies.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ros_ws/src/crazyswarm/launch/hover_swarm.launch" beforeDir="false" afterPath="$PROJECT_DIR$/ros_ws/src/crazyswarm/launch/hover_swarm.launch" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ros_ws/src/crazyswarm/launch/mocap_helper.launch" beforeDir="false" afterPath="$PROJECT_DIR$/ros_ws/src/crazyswarm/launch/mocap_helper.launch" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ros_ws/src/crazyswarm/src/crazyswarm_server.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/ros_ws/src/crazyswarm/src/crazyswarm_server.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ros_ws/src/crazyswarm/src/crazyswarm_teleop.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/ros_ws/src/crazyswarm/src/crazyswarm_teleop.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ros_ws/src/externalDependencies/libmotioncapture" beforeDir="false" afterPath="$PROJECT_DIR$/ros_ws/src/externalDependencies/libmotioncapture" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ros_ws/src/externalDependencies/libobjecttracker" beforeDir="false" afterPath="$PROJECT_DIR$/ros_ws/src/externalDependencies/libobjecttracker" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/ros_ws/src/cmake-build-debug/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="crazyswarm" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="crazyswarm_server.cpp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ros_ws/src/crazyswarm/src/crazyswarm_server.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="256">
+              <caret line="790" column="47" selection-start-line="790" selection-start-column="47" selection-end-line="790" selection-end-column="47" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Crazyflie.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ros_ws/src/crazyflie_ros/crazyflie_cpp/include/crazyflie_cpp/Crazyflie.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2331">
+              <caret line="111" column="19" selection-start-line="111" selection-start-column="7" selection-end-line="111" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Crazyflie.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ros_ws/src/crazyflie_ros/crazyflie_cpp/src/Crazyflie.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="490">
+              <caret line="1408" column="54" selection-start-line="1408" selection-start-column="54" selection-end-line="1408" selection-end-column="54" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="crtp_commander_rpyt.c" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/crazyflie-firmware/src/modules/src/crtp_commander_rpyt.c">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file leaf-file-name="crtp_commander_high_level.c" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/crazyflie-firmware/src/modules/src/crtp_commander_high_level.c">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="231">
+              <caret line="11" column="2" selection-start-line="11" selection-end-line="11" selection-end-column="2" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="crtp_localization_service.c" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/crazyflie-firmware/src/modules/src/crtp_localization_service.c">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="465">
+              <caret line="228" column="30" selection-start-line="228" selection-start-column="30" selection-end-line="228" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="controller.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/crazyflie-firmware/src/modules/interface/controller.h">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file leaf-file-name="crazyflieTypes.yaml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ros_ws/src/crazyswarm/launch/crazyflieTypes.yaml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="617">
+              <caret line="123" selection-start-line="123" selection-end-line="123" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="controller.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ros_ws/src/crazyswarm/include/controller.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="400">
+              <caret line="97" column="57" selection-start-line="97" selection-start-column="57" selection-end-line="97" selection-end-column="57" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="commander.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ros_ws/src/crazyswarm/include/commander.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1919">
+              <caret line="161" selection-start-line="161" selection-end-line="161" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>Eigen</find>
+      <find>Output</find>
+      <find>(*Output)(2)</find>
+      <find>control_non</find>
+      <find>debug ta</find>
+      <find>Get Position Setpoint!</find>
+      <find>R_des</find>
+      <find>_R_des</find>
+      <find>thrust ouside</find>
+      <find>m_sendAttSp</find>
+      <find>Groupcontrol</find>
+      <find>stateController</find>
+      <find>modeA</find>
+      <find>modeDisable</find>
+      <find>yaw</find>
+      <find>sp_states</find>
+      <find>sendAttSps</find>
+      <find>*</find>
+      <find>control_nonLineaire</find>
+      <find>thrust_force</find>
+      <find>1000</find>
+      <find>thrus</find>
+      <find>sp_state</find>
+      <find>AttSetPts</find>
+      <find>sendPositionSetpoint</find>
+      <find>sendSetpoint</find>
+      <find>attitutes</find>
+      <find>thrust</find>
+      <find>attSp</find>
+      <find>2500</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/ros_ws/src/crazyflie_ros/crazyflie_cpp/include/crazyflie_cpp/crtp.h" />
+        <option value="$PROJECT_DIR$/crazyflie-firmware/src/modules/interface/crtp.h" />
+        <option value="$PROJECT_DIR$/crazyflie-firmware/src/modules/interface/stabilizer_types.h" />
+        <option value="$PROJECT_DIR$/crazyflie-firmware/src/modules/interface/crtp_localization_service.h" />
+        <option value="$PROJECT_DIR$/ros_ws/src/crazyflie_ros/crazyflie_driver/srv/getPosSetPoint.srv" />
+        <option value="$PROJECT_DIR$/ros_ws/src/crazyflie_ros/crazyflie_driver/CMakeLists.txt" />
+        <option value="$PROJECT_DIR$/ros_ws/src/crazyswarm/src/controller.cpp" />
+        <option value="$PROJECT_DIR$/ros_ws/src/crazyswarm/launch/communication_test.launch" />
+        <option value="$PROJECT_DIR$/ros_ws/src/crazyswarm/launch/mocap_helper.launch" />
+        <option value="$PROJECT_DIR$/ros_ws/src/externalDependencies/libobjecttracker/src/object_tracker.cpp" />
+        <option value="$PROJECT_DIR$/ros_ws/src/crazyswarm/launch/crazyflies.yaml" />
+        <option value="$USER_HOME$/ros_ws/src/crazyswarm/launch/allCrazyflies.yaml" />
+        <option value="$PROJECT_DIR$/ros_ws/src/crazyswarm/src/crazyswarm_serverss.cpp" />
+        <option value="$PROJECT_DIR$/ros_ws/src/crazyswarm/launch/allCrazyflies.yaml" />
+        <option value="$PROJECT_DIR$/ros_ws/src/crazyswarm/include/type_methode.h" />
+        <option value="$PROJECT_DIR$/ros_ws/src/crazyswarm/include/type_methode.cpp" />
+        <option value="$PROJECT_DIR$/ros_ws/src/crazyswarm/include/basic_types.h" />
+        <option value="$PROJECT_DIR$/ros_ws/src/crazyswarm/src/crazyswarm_server2bad.cpp" />
+        <option value="$PROJECT_DIR$/ros_ws/src/crazyswarm/src/crazyswarm_teleop.cpp" />
+        <option value="$PROJECT_DIR$/ros_ws/src/crazyflie_ros/crazyflie_cpp/include/crazyflie_cpp/Crazyflie.h" />
+        <option value="$PROJECT_DIR$/ros_ws/src/crazyswarm/CMakeLists.txt" />
+        <option value="$PROJECT_DIR$/ros_ws/src/crazyswarm/include/commons.h" />
+        <option value="$PROJECT_DIR$/ros_ws/src/crazyswarm/launch/hover_swarm.launch" />
+        <option value="$PROJECT_DIR$/ros_ws/src/crazyswarm/include/commander.h" />
+        <option value="$PROJECT_DIR$/ros_ws/src/crazyswarm/src/communicationTest.cpp" />
+        <option value="$PROJECT_DIR$/ros_ws/src/crazyswarm/include/control_modified.h" />
+        <option value="$PROJECT_DIR$/ros_ws/src/crazyswarm/include/commander.cpp" />
+        <option value="$PROJECT_DIR$/ros_ws/src/crazyswarm/launch/crazyflieTypes.yaml" />
+        <option value="$PROJECT_DIR$/crazyflie-firmware/src/modules/src/stabilizer.c" />
+        <option value="$PROJECT_DIR$/ros_ws/src/crazyswarm/include/controller.cpp" />
+        <option value="$PROJECT_DIR$/ros_ws/src/crazyflie_ros/crazyflie_cpp/src/Crazyflie.cpp" />
+        <option value="$PROJECT_DIR$/crazyflie-firmware/src/modules/src/crtp_localization_service.c" />
+        <option value="$PROJECT_DIR$/ros_ws/src/crazyswarm/src/crazyswarm_server.cpp" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths />
+  </component>
+  <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-126" />
+    <option name="y" value="-4" />
+    <option name="width" value="1855" />
+    <option name="height" value="1084" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="crazyswarm" type="b2602c69:ProjectViewProjectNode" />
+              <item name="crazyswarm" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="crazyswarm" type="b2602c69:ProjectViewProjectNode" />
+              <item name="crazyswarm" type="462c0819:PsiDirectoryNode" />
+              <item name="crazyflie-firmware" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="crazyswarm" type="b2602c69:ProjectViewProjectNode" />
+              <item name="crazyswarm" type="462c0819:PsiDirectoryNode" />
+              <item name="crazyflie-firmware" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="crazyswarm" type="b2602c69:ProjectViewProjectNode" />
+              <item name="crazyswarm" type="462c0819:PsiDirectoryNode" />
+              <item name="crazyflie-firmware" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="modules" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="crazyswarm" type="b2602c69:ProjectViewProjectNode" />
+              <item name="crazyswarm" type="462c0819:PsiDirectoryNode" />
+              <item name="crazyflie-firmware" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="modules" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="crazyswarm" type="b2602c69:ProjectViewProjectNode" />
+              <item name="crazyswarm" type="462c0819:PsiDirectoryNode" />
+              <item name="ros_ws" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="crazyswarm" type="b2602c69:ProjectViewProjectNode" />
+              <item name="crazyswarm" type="462c0819:PsiDirectoryNode" />
+              <item name="ros_ws" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="crazyswarm" type="b2602c69:ProjectViewProjectNode" />
+              <item name="crazyswarm" type="462c0819:PsiDirectoryNode" />
+              <item name="ros_ws" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="crazyflie_ros" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="crazyswarm" type="b2602c69:ProjectViewProjectNode" />
+              <item name="crazyswarm" type="462c0819:PsiDirectoryNode" />
+              <item name="ros_ws" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="crazyflie_ros" type="462c0819:PsiDirectoryNode" />
+              <item name="crazyflie_cpp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="crazyswarm" type="b2602c69:ProjectViewProjectNode" />
+              <item name="crazyswarm" type="462c0819:PsiDirectoryNode" />
+              <item name="ros_ws" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="crazyflie_ros" type="462c0819:PsiDirectoryNode" />
+              <item name="crazyflie_cpp" type="462c0819:PsiDirectoryNode" />
+              <item name="include" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="crazyswarm" type="b2602c69:ProjectViewProjectNode" />
+              <item name="crazyswarm" type="462c0819:PsiDirectoryNode" />
+              <item name="ros_ws" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="crazyflie_ros" type="462c0819:PsiDirectoryNode" />
+              <item name="crazyflie_cpp" type="462c0819:PsiDirectoryNode" />
+              <item name="include" type="462c0819:PsiDirectoryNode" />
+              <item name="crazyflie_cpp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="crazyswarm" type="b2602c69:ProjectViewProjectNode" />
+              <item name="crazyswarm" type="462c0819:PsiDirectoryNode" />
+              <item name="ros_ws" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="crazyflie_ros" type="462c0819:PsiDirectoryNode" />
+              <item name="crazyflie_cpp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="crazyswarm" type="b2602c69:ProjectViewProjectNode" />
+              <item name="crazyswarm" type="462c0819:PsiDirectoryNode" />
+              <item name="ros_ws" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="crazyswarm" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="crazyswarm" type="b2602c69:ProjectViewProjectNode" />
+              <item name="crazyswarm" type="462c0819:PsiDirectoryNode" />
+              <item name="ros_ws" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="crazyswarm" type="462c0819:PsiDirectoryNode" />
+              <item name="include" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="crazyswarm" type="b2602c69:ProjectViewProjectNode" />
+              <item name="crazyswarm" type="462c0819:PsiDirectoryNode" />
+              <item name="ros_ws" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="crazyswarm" type="462c0819:PsiDirectoryNode" />
+              <item name="launch" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="crazyswarm" type="b2602c69:ProjectViewProjectNode" />
+              <item name="crazyswarm" type="462c0819:PsiDirectoryNode" />
+              <item name="ros_ws" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="crazyswarm" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="crazyswarm" type="b2602c69:ProjectViewProjectNode" />
+              <item name="crazyswarm" type="462c0819:PsiDirectoryNode" />
+              <item name="ros_ws" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="externalDependencies" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/ros_ws/src/CMakeLists.txt" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="38fddb8a-e1b6-4957-823f-53442ab8db75" name="Default" comment="" />
+      <created>1527580062059</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1527580062059</updated>
+      <workItem from="1527580063341" duration="8707000" />
+      <workItem from="1527770247664" duration="18001000" />
+      <workItem from="1528594398372" duration="34074000" />
+      <workItem from="1528875013954" duration="21291000" />
+      <workItem from="1529376154551" duration="7979000" />
+      <workItem from="1529458210366" duration="914000" />
+      <workItem from="1529465516372" duration="8580000" />
+      <workItem from="1529648778579" duration="3953000" />
+      <workItem from="1529652751246" duration="10888000" />
+      <workItem from="1530064191819" duration="6361000" />
+      <workItem from="1530071331829" duration="12074000" />
+      <workItem from="1530259588604" duration="2629000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="135451000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="64" y="-11" width="1857" height="1092" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19730458" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="CMake" order="10" visible="true" weight="0.18998979" />
+      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info id="Favorites" order="2" side_tool="true" weight="0.32991913" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+    </layout>
+    <layout-to-restore>
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19730458" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="CMake" order="10" weight="0.18998979" />
+      <window_info id="Favorites" order="2" side_tool="true" weight="0.32991913" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="5" />
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/crazyflie-firmware/src/modules/interface/crtp_localization_service.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="63">
+          <caret line="3" column="57" lean-forward="true" selection-start-line="3" selection-start-column="57" selection-end-line="3" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ros_ws/src/crazyswarm/scripts/figure8_csv.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="13" column="32" selection-start-line="13" selection-start-column="32" selection-end-line="13" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ros_ws/src/crazyswarm/package.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="21" selection-start-column="21" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ros_ws/src/crazyswarm/src/controller.cpp" />
+    <entry file="file://$USER_HOME$/YU/Intern/game_data/prices.csv" />
+    <entry file="file://$PROJECT_DIR$/crazyflie-firmware/Rakefile">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/crazyflie-firmware/Makefile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1571">
+          <caret line="356" column="6" lean-forward="true" selection-start-line="356" selection-start-column="6" selection-end-line="356" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ros_ws/src/crazyflie_ros/crazyflie_driver/srv/getPosSetPoint.srv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="63">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ros_ws/src/crazyflie_ros/crazyflie_driver/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="30" column="18" lean-forward="true" selection-start-line="30" selection-start-column="18" selection-end-line="30" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ros_ws/src/crazyswarm/src/one_cf.cpp">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$USER_HOME$/crazyswarm-origin/ros_ws/src/crazyswarm/launch/hover_swarm.launch">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="626">
+          <caret line="69" lean-forward="true" selection-start-line="69" selection-end-line="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ros_ws/src/crazyswarm/launch/communication_test.launch">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="609">
+          <caret line="29" column="13" lean-forward="true" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ros_ws/src/externalDependencies/libobjecttracker/src/object_tracker .cpp" />
+    <entry file="file://$PROJECT_DIR$/ros_ws/src/externalDependencies/libobjecttracker/include/libobjecttracker/object_tracker.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="777">
+          <caret line="37" column="74" selection-start-line="37" selection-start-column="51" selection-end-line="37" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/ros_ws/src/crazyswarm/launch/allCrazyflies.yaml" />
+    <entry file="file://$PROJECT_DIR$/ros_ws/src/crazyswarm/src/crazyswarm_serverss.cpp" />
+    <entry file="file://$PROJECT_DIR$/ros_ws/src/externalDependencies/libobjecttracker/src/object_tracker.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="69" column="37" selection-start-line="89" selection-start-column="15" selection-end-line="89" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ros_ws/src/crazyswarm/src/crazyswarm_servergood.cpp" />
+    <entry file="file://$PROJECT_DIR$/ros_ws/src/crazyswarm/src/crazyswarm_serverbad.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="700" column="36" selection-start-line="700" selection-start-column="36" selection-end-line="700" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/ros_ws-realorigin/src/crazyswarm/launch/crazyflieTypes.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="8" column="14" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ros_ws/src/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="17" column="45" selection-start-line="17" selection-start-column="45" selection-end-line="17" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ros_ws/src/crazyswarm/include/type_methode.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5817">
+          <caret line="328" column="22" selection-start-line="328" selection-start-column="22" selection-end-line="328" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/YU/Intern/game_data/ReadMe.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="63">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ros_ws/src/crazyswarm/include/type_methode.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="63">
+          <caret line="3" column="24" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ros_ws/src/crazyswarm/src/crazyswarm_server2bad.cpp" />
+    <entry file="file://$PROJECT_DIR$/ros_ws/src/crazyswarm/include/basic_types.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="24" column="40" selection-start-line="24" selection-start-column="40" selection-end-line="24" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ros_ws/src/crazyswarm/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3423">
+          <caret line="163" column="2" selection-start-line="163" selection-start-column="2" selection-end-line="163" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ros_ws/src/crazyswarm/src/crazyswarm_teleop.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2604">
+          <caret line="124" selection-start-line="124" selection-end-line="124" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ros_ws/src/crazyswarm/launch/hover_swarm (复件).launch">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="438">
+          <caret line="57" column="4" lean-forward="true" selection-start-line="57" selection-start-column="4" selection-end-line="57" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ros_ws/src/crazyswarm/launch/mocap_helper.launch">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ros_ws/src/crazyswarm/launch/crazyflies.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="4" column="15" selection-start-line="4" selection-start-column="15" selection-end-line="4" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ros_ws/src/crazyswarm/launch/allCrazyflies.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="441">
+          <caret line="21" column="9" selection-start-line="21" selection-start-column="9" selection-end-line="21" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ros_ws/src/crazyswarm/include/commons.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="546">
+          <caret line="26" selection-start-line="26" selection-end-line="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/crazyflie-firmware/cf2.map">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="22825" column="9" selection-start-line="22825" selection-start-column="9" selection-end-line="22825" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ros_ws/src/crazyswarm/src/communicationTest.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4071">
+          <caret line="831" column="36" selection-start-line="831" selection-start-column="36" selection-end-line="831" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ros_ws/src/crazyswarm/include/control_modified.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1911">
+          <caret line="91" column="5" selection-start-line="91" selection-start-column="5" selection-end-line="91" selection-end-column="5" />
+          <folding>
+            <element signature="e#83#103#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ros_ws/src/crazyswarm/include/commander.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1071">
+          <caret line="51" selection-start-line="51" selection-end-line="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ros_ws/src/crazyswarm/launch/figure8_smooth.csv">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ros_ws/src/crazyswarm/launch/hover_swarm.launch">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="903">
+          <caret line="43" column="39" selection-start-line="43" selection-start-column="39" selection-end-line="43" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/crazyflie-firmware/src/modules/src/stabilizer.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1286">
+          <caret line="141" selection-start-line="141" selection-end-line="141" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/crazyflie-firmware/src/modules/interface/stabilizer.h">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ros_ws/src/crazyswarm/launch/crazyflieTypes.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="617">
+          <caret line="123" selection-start-line="123" selection-end-line="123" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/crazyflie-firmware/src/modules/interface/controller.h">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ros_ws/src/crazyswarm/include/commander.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1919">
+          <caret line="161" selection-start-line="161" selection-end-line="161" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ros_ws/src/crazyswarm/include/controller.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="97" column="57" selection-start-line="97" selection-start-column="57" selection-end-line="97" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/crazyflie-firmware/src/modules/src/crtp_commander_rpyt.c">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ros_ws/src/crazyflie_ros/crazyflie_cpp/include/crazyflie_cpp/Crazyflie.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2331">
+          <caret line="111" column="19" selection-start-line="111" selection-start-column="7" selection-end-line="111" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ros_ws/src/crazyflie_ros/crazyflie_cpp/src/Crazyflie.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="490">
+          <caret line="1408" column="54" selection-start-line="1408" selection-start-column="54" selection-end-line="1408" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/crazyflie-firmware/src/modules/src/crtp_commander_high_level.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="11" column="2" selection-start-line="11" selection-end-line="11" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/crazyflie-firmware/src/modules/src/crtp_localization_service.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="228" column="30" selection-start-line="228" selection-start-column="30" selection-end-line="228" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ros_ws/src/crazyswarm/src/crazyswarm_server.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="790" column="47" selection-start-line="790" selection-start-column="47" selection-end-line="790" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

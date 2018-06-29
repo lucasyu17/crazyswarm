@@ -123,11 +123,15 @@ catkin_package(
 ###########
 ## Build ##
 ###########
+add_library(type_methode SHARED include/type_methode.cpp)
+add_library(controller SHARED include/controller.cpp)
+add_library(commander SHARED include/commander.cpp)
 
 include_directories(
   ${catkin_INCLUDE_DIRS}
   ${PCL_INCLUDE_DIRS}
   ../externalDependencies/libobjecttracker/include
+  ./include
   ## TODO remove this dependency
   ../../../crazyflie-firmware/src/modules/interface/
 )
@@ -146,6 +150,7 @@ if (ENABLE_PHASESPACE)
   add_definitions(-DENABLE_PHASESPACE)
 endif()
 
+
 # message(${CMAKE_BINARY_DIR}/crazyflie_ros/externalDependencies/libobjecttracker)
 
 ## Declare a cpp executable
@@ -154,7 +159,20 @@ add_executable(crazyswarm_server
 )
 target_link_libraries(crazyswarm_server
   ${catkin_LIBRARIES}
+  controller
+  type_methode
+  commander
 )
+
+
+#add_executable(communication_test
+#  src/communicationTest.cpp
+#)
+#target_link_libraries(communication_test
+#  ${catkin_LIBRARIES}
+#  controller
+#  type_methode
+#)
 
 ## Declare a cpp executable
 add_executable(crazyswarm_teleop

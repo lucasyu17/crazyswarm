@@ -1,0 +1,6 @@
+int32 group
+int32 id
+---
+float32 sp_x
+float32 sp_y
+float32 sp_z

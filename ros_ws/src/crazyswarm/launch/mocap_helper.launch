@@ -6,7 +6,7 @@
       # tracking
       motion_capture_type: "vicon" # one of vicon,optitrack
       object_tracking_type: "motionCapture" # one of motionCapture,libobjecttracker
-      vicon_host_name: "vicon"
+      vicon_host_name: "192.168.2.100:801"
       # optitrack_local_ip: "localhost"
       # optitrack_server_ip: "optitrack"
     </rosparam>

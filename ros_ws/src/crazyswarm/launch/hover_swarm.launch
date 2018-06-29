@@ -7,7 +7,6 @@
 
   <node pkg="crazyswarm" type="crazyswarm_server" name="crazyswarm_server" output="screen" >
     <rosparam>
-      firmware: "crazyswarm" # one of "crazyswarm", "bitcraze"
       broadcast_address: "FFE7E7E7E7"
       world_frame: "/world"
       genericLogTopics: ["log1"]
@@ -21,6 +20,10 @@
       firmwareParams: # for all (independent of type)
         commander:
           enHighLevel: 1
+#        traj:
+#          auto_yaw: 0
+        kalmanUSC:
+          rstWithExtPos: 1 # re-initialize EKF with vicon data
         ring:
           effect: 14 # 6: double spinner, 7: solid color, 14: packetRate
           solidBlue: 255 # if set to solid color
@@ -37,15 +40,16 @@
       # tracking
       motion_capture_type: "vicon" # one of vicon,optitrack
       object_tracking_type: "libobjecttracker" # one of motionCapture,libobjecttracker
-      vicon_host_name: "vicon"
+      vicon_host_name: "192.168.2.100:801"
       # optitrack_local_ip: "localhost"
       # optitrack_server_ip: "optitrack"
       save_point_clouds: ~/pointCloud.ot
       print_latency: False
       write_csvs: False
+      #False by default
       force_no_cache: False
       enable_parameters: True
-      enable_logging: False
+      enable_logging: True
     </rosparam>
   </node>
 
@@ -54,8 +58,8 @@
   </node>
 
   <node pkg="crazyswarm" type="crazyswarm_teleop" name="crazyswarm_teleop" output="screen">
-    <param name="csv_file" value="$(find crazyswarm)/launch/figure8_smooth.csv" />
-    <param name="timescale" value="0.8" />
+    <!--param name="csv_file" value="$(find crazyswarm)/launch/figure8_smooth.csv" />
+    <param name="timescale" value="0.8" /-->
   </node>
 
   <node name="rviz" pkg="rviz" type="rviz" args="-d $(find crazyswarm)/launch/test.rviz"/>
