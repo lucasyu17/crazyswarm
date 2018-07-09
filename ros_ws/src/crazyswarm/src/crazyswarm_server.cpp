@@ -788,7 +788,7 @@ public:
                 sp_states.back().roll = 0.0f;
                 sp_states.back().pitch = 0.0f;
                 sp_states.back().yaw = 3.36f;
-                sp_states.back().thrust = 10000.0f;
+                sp_states.back().thrust = 1000.0f;
             }
 
           m_cfs[i]->initializePositionIfNeeded(states.back().x, states.back().y, states.back().z);
