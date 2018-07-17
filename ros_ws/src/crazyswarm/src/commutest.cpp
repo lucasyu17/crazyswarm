@@ -30,7 +30,6 @@
 #include <mutex>
 #include <condition_variable>
 
-
 #include <crazyflie_cpp/Crazyflie.h>
 
 // debug test
@@ -57,7 +56,6 @@
 #include <mutex>
 #include <wordexp.h> // tilde expansion
 
-#include <stdio.h>
 /*
 Threading
  * There are 2N+1 threads, where N is the number of groups (== number of unique channels)
@@ -74,7 +72,7 @@ Threading
 */
 
 constexpr double pi() { return std::atan(1)*4; }
-int isStartTr = 0;
+
 double degToRad(double deg) {
     return deg / 180.0 * pi();
 }
@@ -87,8 +85,6 @@ void logWarn(const std::string& msg)
 {
   ROS_WARN("%s", msg.c_str());
 }
-
-bool isStopSendTr = false;
 
 class ROSLogger : public Logger
 {
@@ -187,7 +183,6 @@ public:
     , m_logBlocks(log_blocks)
     , m_forceNoCache(force_no_cache)
     , m_initializedPosition(false)
-    , isNotSendPIng(false)
   {
     printf("-----------------hello swarmServer --------------------\n");
     ros::NodeHandle n;
@@ -197,7 +192,7 @@ public:
     m_serviceLand = n.advertiseService(tf_prefix + "/land", &CrazyflieROS::land, this);
     m_serviceGoTo = n.advertiseService(tf_prefix + "/go_to", &CrazyflieROS::goTo, this);
     m_serviceSetGroupMask = n.advertiseService(tf_prefix + "/set_group_mask", &CrazyflieROS::setGroupMask, this);
-    m_rpy(0) = -3;
+
     if (m_enableLogging) {
       m_logFile.open("logcf" + std::to_string(id) + ".csv");
       m_logFile << "time,";
@@ -234,9 +229,7 @@ public:
   }
 
   void sendPing() {
-    if(!isNotSendPIng){
-      m_cf.sendPing();
-      }
+    m_cf.sendPing();
   }
 
   // void joyChanged(
@@ -283,8 +276,7 @@ public:
   // }
 
 public:
-  bool isNotSendPIng;
-  Eigen::Vector3f m_rpy;
+
   template<class T, class U>
   void updateParam(uint8_t id, const std::string& ros_param) {
       U value;
@@ -345,8 +337,7 @@ public:
     crazyflie_driver::UploadTrajectory::Response& res)
   {
     ROS_INFO("[%s] Upload trajectory", m_frame.c_str());
-    isNotSendPIng = true;
-    isStopSendTr = true;
+
     std::vector<Crazyflie::poly4d> pieces(req.pieces.size());
     for (size_t i = 0; i < pieces.size(); ++i) {
       if (   req.pieces[i].poly_x.size() != 8
@@ -364,17 +355,15 @@ public:
         pieces[i].p[3][j] = req.pieces[i].poly_yaw[j];
       }
     }
-    // for(int j=0;j<10;++j) //hongzhe: repeat request
-    // {
+    for(int j=0;j<20;++j) //hongzhe: repeat request
+    {
       m_cf.uploadTrajectory(req.trajectoryId, req.pieceOffset, pieces);
-      // std::this_thread::sleep_for(std::chrono::milliseconds(3));
-    // }
+    }
     
 
     ROS_INFO("[%s] Uploaded trajectory", m_frame.c_str());
 
-    isNotSendPIng = false;
-    isStopSendTr = false;
+
     return true;
   }
 
@@ -383,7 +372,7 @@ public:
     crazyflie_driver::Takeoff::Response& res)
   {
     ROS_INFO("[%s] Takeoff", m_frame.c_str());
-    
+
     m_cf.takeoff(req.height, req.duration.toSec(), req.groupMask);
 
     return true;
@@ -598,11 +587,9 @@ private:
 
 
 // handles a group of Crazyflies, which share a radio
-
 class CrazyflieGroup
 {
 public:
-  bool isNotSendPIng;
   struct latency
   {
     double objectTracking;
@@ -624,7 +611,6 @@ public:
     )
     : m_cfs()
     , m_tracker(nullptr)
-    , isNotSendPIng(false)
     , m_radio(radio)
     , m_pMarkers(pMarkers)
     , m_pMocapObjects(pMocapObjects)
@@ -638,10 +624,7 @@ public:
     , m_phase(0)
     , m_phaseStart()
   {
-    printf("----------open csv--------------\n");
-    char str_csv[50] ;
-    sprintf(str_csv,"/home/lucasyu/ros_ws/src/crazyswarm/Cfs%d.csv",channel);
-    Cf_csv.open(str_csv);printf("opened csv\n");
+    
     std::vector<libobjecttracker::Object> objects;
     readObjects(objects, channel, logBlocks);
     printf("----------------crazyflie group 0---------------\n");
@@ -703,104 +686,23 @@ public:
         // totalLatency += elapsedSeconds.count();
         // ROS_INFO("Tracking: %f s", elapsedSeconds.count());
       }
-      // sring temple;
-      
+
       for (size_t i = 0; i < m_cfs.size(); ++i) {
         if (m_tracker->objects()[i].lastTransformationValid()) {
-          
+
           const Eigen::Affine3f& transform = m_tracker->objects()[i].transformation();
           Eigen::Quaternionf q(transform.rotation());
           const auto& translation = transform.translation();
-
-          auto rpy = q.toRotationMatrix().eulerAngles(0, 1, 2);
-          // Cf_csv << rpy(0) << "," << rpy(1) << "," << rpy(2);
-
-          if(fabs(rpy(0))>1.57){
-            if(rpy(0)>1.57) {rpy(0)-=3.14;}
-            else {rpy(0)+=3.14;}
-          }
-          
-          if(fabs(rpy(1))>1.57){
-            if(rpy(1)>1.57) {rpy(1)-=3.14;}
-            else {rpy(1)+=3.14;}
-          }
-          
-          if(fabs(rpy(2))>1.57){
-            if(rpy(2)>1.57) {rpy(2)-=3.14;}
-            else {rpy(2)+=3.14;}
-          }
-          if(m_cfs[i]->m_rpy(0) > -2){
-            // Eigen::Quaternionf qq(m_cfs[i]->states.qw,m_cfs[i]->states.qx,m_cfs[i]->states.qy,m_cfs[i]->states.qz);
-            auto rpy2 = m_cfs[i]->m_rpy;
-
-            if((fabs(rpy(0)-rpy2(0))>0.1)&&( (rpy(0)*rpy2(0))<0))
-            {
-              rpy(0) = -rpy(0);
-            }
-            if((fabs(rpy(1)-rpy2(1))>0.1)&&(rpy(1)*rpy2(1)<0))
-            {
-              rpy(1) = -rpy(1);
-            }
-            if((fabs(rpy(2)-rpy2(2))>0.1)&&(rpy(2)*rpy2(2)<0))
-            {
-              rpy(2) = -rpy(2);
-            }
-            Cf_csv << rpy2(0) << "," << rpy2(1) << "," << rpy2(2)<<",";
-          }
-
-          q = Eigen::AngleAxisf(rpy(0), Eigen::Vector3f::UnitX())
-	        * Eigen::AngleAxisf(rpy(1), Eigen::Vector3f::UnitY())
-	        * Eigen::AngleAxisf(rpy(2), Eigen::Vector3f::UnitZ());
 
           states.resize(states.size() + 1);
           states.back().id = m_cfs[i]->id();
           states.back().x = translation.x();
           states.back().y = translation.y();
           states.back().z = translation.z();
-
           states.back().qx = q.x();
           states.back().qy = q.y();
           states.back().qz = q.z();
           states.back().qw = q.w();
-          float x,y,z;
-          x = rpy(0);
-          y = rpy(1);
-          z = rpy(2);   
-          m_cfs[i]->m_rpy(0) = x;
-          m_cfs[i]->m_rpy(1) = y;
-          m_cfs[i]->m_rpy(2) = z;
-
-          
-          if(isStartTr>0){
-              // auto rpy = q.toRotationMatrix().eulerAngles(0, 1, 2);
-              // Eigen::Quaternionf qq = Eigen::AngleAxisf(-3.0,Eigen::Vector3f::UnitX())*Eigen::AngleAxisf(-5.0,Eigen::Vector3f::UnitY())*Eigen::AngleAxisf(rpy(3),Eigen::Vector3f::UnitZ());
-              // states.back().qx = qq.coeffs()[0];
-              // states.back().qy = qq.coeffs()[1];
-              // states.back().qz = qq.coeffs()[2];
-              // states.back().qw = qq.coeffs()[3];
-              isStartTr = -1;
-            }
-          /**
-          vicon state prediction
-          **/
-          float rho = 0.6;
-          /*if(states.size()>1){
-            float vx,vy,vz,e_x,e_y,e_z,x_star,y_star,z_star;
-            const auto& lstate = states[states.size()-2];
-            vx = (states.back().x-lstate.x)/0.01f;
-            vy = (states.back().y-lstate.y)/0.01f;
-            vz = (states.back().z-lstate.z)/0.01f;
-            x_star = states.back().x + vx*0.01;
-            y_star = states.back().y + vy*0.01;
-            z_star = states.back().z + vz*0.01;
-            e_x = states.back().x - x_star;
-            e_y = states.back().y - y_star;
-            e_z = states.back().z - z_star;
-            states.back().x = states.back().x + rho*e_x;
-            states.back().y = states.back().y + rho*e_y;
-            states.back().z = states.back().z + rho*e_z;
-          }*/
-          
 
           m_cfs[i]->initializePositionIfNeeded(states.back().x, states.back().y, states.back().z);
 
@@ -811,38 +713,22 @@ public:
           // tf::transformEigenToTF(transformd, tftransform);
           // tftransform.setOrigin(tf::Vector3(translation.x(), translation.y(), translation.z()));
           // tf::Quaternion tfq(q.x(), q.y(), q.z(), q.w());
-          if (!isStopSendTr)
-          {
-            // if(isStartTr>0){
-            //   std::this_thread::sleep_for(std::chrono::milliseconds(2000));
-            //   isStartTr = -1;
-            // }
-            m_br.sendTransform(tf::StampedTransform(tftransform, ros::Time::now(), "world", m_cfs[i]->frame()));
-          }
+          m_br.sendTransform(tf::StampedTransform(tftransform, ros::Time::now(), "world", m_cfs[i]->frame()));
 
           if (m_outputCSVs.size() > 0) {
             std::chrono::duration<double> tDuration = stamp - m_phaseStart;
             double t = tDuration.count();
-            // auto rpy = q.toRotationMatrix().eulerAngles(0, 1, 2);
+            auto rpy = q.toRotationMatrix().eulerAngles(0, 1, 2);
             *m_outputCSVs[i] << t << "," << states.back().x << "," << states.back().y << "," << states.back().z
                                   << "," << rpy(0) << "," << rpy(1) << "," << rpy(2) << "\n";
           }
-          std::chrono::duration<double> tDuration = stamp - m_phaseStart;
-        double t = tDuration.count();
-        // auto rpy = q.toRotationMatrix().eulerAngles(0, 1, 2);
-        Cf_csv <<m_cfs[i]->id() <<","<< t << "," << states.back().x << "," << states.back().y << "," << states.back().z
-                                  << "," << rpy(0) << "," << rpy(1) << "," << rpy(2)<<",";
-        }
-        
-        else {
+        } else {
           std::chrono::duration<double> elapsedSeconds = stamp - m_tracker->objects()[i].lastValidTime();
           ROS_WARN("No updated pose for CF %s for %f s.",
             m_cfs[i]->frame().c_str(),
             elapsedSeconds.count());
         }
-        
       }
-       Cf_csv << "\n";
     }
 
     {
@@ -871,7 +757,7 @@ public:
     
     while(ros::ok() && !m_isEmergency) {
       
-      if (enableLogging && !isNotSendPIng) {
+      if (enableLogging) {
         for (const auto& cf : m_cfs) {
           cf->sendPing();
         }
@@ -888,20 +774,18 @@ public:
 
   void takeoff(float height, float duration, uint8_t groupMask)
   {
-    // for (size_t i = 0; i < 20; ++i) {  //hongzhe: repeatedly send orders
+    for (size_t i = 0; i < 20; ++i) {  //hongzhe: repeatedly send orders
     m_cfbc.takeoff(height, duration, groupMask);
-    isNotSendPIng = true;
-      // std::this_thread::sleep_for(std::chrono::milliseconds(1));
-    // }
+      std::this_thread::sleep_for(std::chrono::milliseconds(1));
+    }
   }
 
   void land(float height, float duration, uint8_t groupMask)
   {
-    isNotSendPIng = false;
-    // for (size_t i = 0; i < 20; ++i) {  //hongzhe: repeatedly send orders
+    for (size_t i = 0; i < 20; ++i) {  //hongzhe: repeatedly send orders
       m_cfbc.land(height, duration, groupMask);
-      // std::this_thread::sleep_for(std::chrono::milliseconds(1));
-    // }
+      std::this_thread::sleep_for(std::chrono::milliseconds(1));
+    }
   }
 
   void startTrajectory(
@@ -910,17 +794,17 @@ public:
     bool reversed,
     uint8_t groupMask)
   {
-    // for (size_t i = 0; i < 20; ++i) { //hongzhe : repeatedly send orders
+    for (size_t i = 0; i < 20; ++i) { //hongzhe : repeatedly send orders
       m_cfbc.startTrajectory(trajectoryId, timescale, reversed, groupMask);
-      // std::this_thread::sleep_for(std::chrono::milliseconds(1));
-    // }
+      std::this_thread::sleep_for(std::chrono::milliseconds(1));
+    }
   }
 
   void nextPhase()
   {
       for (size_t i = 0; i < m_outputCSVs.size(); ++i) {
         auto& file = *m_outputCSVs[i];
-        // file.close();
+        file.close();
         file.open("cf" + std::to_string(m_cfs[i]->id()) + "_phase" + std::to_string(m_phase + 1) + ".csv");
         file << "t,x,y,z,roll,pitch,yaw\n";
       }
@@ -982,7 +866,7 @@ public:
 #endif
 
 private:
-  std::ofstream Cf_csv;
+
   void publishRigidBody(const std::string& name, uint8_t id, std::vector<CrazyflieBroadcaster::externalPose> &states)
   {
     bool found = false;
@@ -1077,7 +961,7 @@ private:
         std::string idHex = sstr.str();
         
         std::string uri = "radio://" + std::to_string(m_radio) + "/" + std::to_string(channel) + "/2M/E7E7E7E7" + idHex;
-        // std::string uri = "radio://" + std::to_string(m_radio) + "/" + std::to_string(channel) + "/2M/E7" + idHex + idHex + idHex + idHex;
+        
         std::string tf_prefix = "cf" + std::to_string(id);
         std::string frame = "cf" + std::to_string(id);
         cfConfigs.push_back({uri, tf_prefix, frame, id, type});
@@ -1090,7 +974,7 @@ private:
       printf("----------------read object --------------- %s \n",config.uri.c_str());
       Crazyflie cf(config.uri);
       cf.syson();
-      for (size_t i = 0; i < 100; ++i) {
+      for (size_t i = 0; i < 200; ++i) {
         cf.sendPing();
       }
     }
@@ -1641,7 +1525,7 @@ public:
   }
 
 private:
-  
+
   bool emergency(
     std_srvs::Empty::Request& req,
     std_srvs::Empty::Response& res)
@@ -1662,11 +1546,8 @@ private:
     ROS_INFO("Takeoff!");
 
     for (size_t i = 0; i < m_broadcastingNumRepeats; ++i) {
-      int countg = 0;
       for (auto& group : m_groups) {
         group->takeoff(req.height, req.duration.toSec(), req.groupMask);
-        // group->takeoff(0.8f, req.duration.toSec(), req.groupMask);
-        ++countg;
       }
       std::this_thread::sleep_for(std::chrono::milliseconds(m_broadcastingDelayBetweenRepeatsMs));
     }
@@ -1695,9 +1576,7 @@ private:
     crazyflie_driver::StartTrajectory::Response& res)
   {
     ROS_INFO("Start trajectory!");
-    if(isStartTr ==0){
-      isStartTr = 1;
-    } 
+
     for (size_t i = 0; i < m_broadcastingNumRepeats; ++i) {
       for (auto& group : m_groups) {
         group->startTrajectory(req.trajectoryId, req.timescale, req.reversed, req.groupMask);

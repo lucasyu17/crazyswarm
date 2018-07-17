@@ -3,11 +3,13 @@
 
 #include <ros/ros.h>
 #include <tf/transform_listener.h>
+
 #include <sensor_msgs/Joy.h>
 #include <std_srvs/Empty.h>
 
 #include <crazyflie_driver/Takeoff.h>
 #include <crazyflie_driver/Land.h>
+#include "crazyflie_driver/getPosSetPoint.h"
 
 namespace Xbox360Buttons {
 
@@ -46,6 +48,8 @@ public:
         m_serviceTakeoff = nh.serviceClient<crazyflie_driver::Takeoff>("/takeoff");
         ros::service::waitForService("/land");
         m_serviceLand = nh.serviceClient<crazyflie_driver::Land>("/land");
+        ros::service::waitForService("/getServerPosSetPoint");
+        m_servicePosSp = nh.serviceClient<crazyflie_driver::getPosSetPoint>("/getServerPosSetPoint");
 
         ROS_INFO("Manager ready.");
     }
@@ -58,6 +62,7 @@ private:
     void joyChanged(
         const sensor_msgs::Joy::ConstPtr& msg)
     {
+        fflush(stdout);
         static std::vector<int> lastButtonState(Xbox360Buttons::COUNT);
 
         if (msg->buttons.size() >= Xbox360Buttons::COUNT
@@ -71,6 +76,9 @@ private:
             }
             if (msg->buttons[Xbox360Buttons::Back] == 1 && lastButtonState[Xbox360Buttons::Back] == 0) {
                 land();
+            }
+            if (msg->buttons[Xbox360Buttons::LB] == 1 && lastButtonState[Xbox360Buttons::LB] == 0) {
+                getPosSp();
             }
         }
 
@@ -89,8 +97,8 @@ private:
     {
         crazyflie_driver::Takeoff srv;
         srv.request.groupMask = 0;
-        srv.request.height = 1.5;
-        srv.request.duration = ros::Duration(5.0);
+        srv.request.height = 0.5;
+        srv.request.duration = ros::Duration(2.0);
         m_serviceTakeoff.call(srv);
     }
 
@@ -98,9 +106,18 @@ private:
     {
         crazyflie_driver::Land srv;
         srv.request.groupMask = 0;
-        srv.request.height = 0.3;
-        srv.request.duration = ros::Duration(2.5);
+        srv.request.height = 0.05;
+        srv.request.duration = ros::Duration(3.5);
         m_serviceLand.call(srv);
+    }
+
+    void getPosSp()
+    {
+        ROS_INFO("Service get position setpoint is being called!");
+        crazyflie_driver::getPosSetPoint srv;
+        srv.request.group = 0;
+        srv.request.id = 2;
+        m_servicePosSp.call(srv);
     }
 
 private:
@@ -109,6 +126,7 @@ private:
     ros::ServiceClient m_serviceEmergency;
     ros::ServiceClient m_serviceTakeoff;
     ros::ServiceClient m_serviceLand;
+    ros::ServiceClient m_servicePosSp;
 };
 
 int main(int argc, char **argv)
